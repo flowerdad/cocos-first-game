@@ -14,7 +14,7 @@ const { ccclass, property } = cc._decorator;
 export default class NewClass extends cc.Component {
 
     @property
-    positionType = 2;
+    positionType = 3;
 
     @property
     type = 0;

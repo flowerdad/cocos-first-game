@@ -56,6 +56,8 @@ export default class NewClass extends cc.Component {
         console.log(other)
         console.log(self)
         console.log(other.getComponent('lights'))
+        
+
         // // 碰撞系统会计算出碰撞组件在世界坐标系下的相关的值，并放到 world 这个属性里面
         // var world = self.world;
         // console.log(world)
