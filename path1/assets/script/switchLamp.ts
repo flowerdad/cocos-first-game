@@ -5,9 +5,6 @@ export default class NewClass extends cc.Component {
 
     @property
     button = null;
-
-    // LIFE-CYCLE CALLBACKS:
-
     onLoad() {
         this.button = this.getComponent(cc.Button)
         this.button.node.on('click', this.switchLamp, this);
@@ -18,10 +15,7 @@ export default class NewClass extends cc.Component {
     }
 
     switchLamp() {
-        console.log(this.button);
         var node = this.button.node;
-        var type = node.children[0].getComponent('lights').type
-        console.log(type)
         node.children.forEach(element => {
             if (element.getComponent('lights').type == 0) {
                 element.getComponent('lights').type = 1

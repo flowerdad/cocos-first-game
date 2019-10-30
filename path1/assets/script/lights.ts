@@ -19,6 +19,9 @@ export default class NewClass extends cc.Component {
     @property
     type = 0;
 
+    @property
+    spriteType = 1
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}

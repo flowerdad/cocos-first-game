@@ -2,14 +2,26 @@ const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class NewClass extends cc.Component {
+
+    // 上一帧 为了计算角度
     @property
     target = new cc.Vec2(0, 0);
 
+    // 动画节点
     @property
     selfNode = null
 
+    // 当前节点
     @property
     spriteNode = null
+
+    // 当前节点type
+    @property
+    spriteType = 0
+
+    // 其他碰撞节点暂存
+    @property
+    othersPrite = null
 
     random(lower, upper) {
         return Math.floor(Math.random() * (upper - lower + 1)) + lower;
@@ -18,7 +30,10 @@ export default class NewClass extends cc.Component {
     onLoad() {
         this.spriteNode = this.getComponent(cc.Sprite)
         this.selfNode = this.getComponent(cc.Animation)
-        this.selfNode.play('car' + this.random(0, 4))
+        var random = this.random(0, 3);
+        console.log(random);
+        // if (random == 2) { random = 1 }
+        this.selfNode.play('car' + random)
         this.selfNode.on('finished', this.removeNode, this);
     }
 
@@ -42,6 +57,13 @@ export default class NewClass extends cc.Component {
             var manager = cc.director.getCollisionManager();
             manager.enabled = true;
             // manager.enabledDebugDraw = true;
+
+            if (this.othersPrite != null) {
+                if (this.othersPrite.getComponent('lights').type == 1) {
+                    this.selfNode.resume();
+                }
+            }
+
         }
     }
 
@@ -51,12 +73,26 @@ export default class NewClass extends cc.Component {
     }
 
     onCollisionEnter(other, self) {
-        console.log('我被撞到了')
-        this.selfNode.stop();
-        console.log(other)
-        console.log(self)
-        console.log(other.getComponent('lights'))
 
+        // console.log('我被撞到了')
+        // this.selfNode.stop();
+        // console.log(other)
+        // console.log(self)
+        // console.log(other.getComponent('lights'))
+
+
+        if (other.getComponent('lights') == null) {
+            console.log('我是车')
+        } else {
+            console.log('我是灯')
+            this.othersPrite = other;
+            var type = other.getComponent('lights').type
+            if (type == 0) {
+                this.selfNode.pause();
+            } else {
+                this.selfNode.resume();
+            }
+        }
 
         // // 碰撞系统会计算出碰撞组件在世界坐标系下的相关的值，并放到 world 这个属性里面
         // var world = self.world;
