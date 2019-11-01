@@ -1,0 +1,68 @@
+2019-10-30T08:47:55.782Z - normal: Load ~/.CocosCreator/settings.json
+2019-10-30T08:47:56.929Z - normal: Initializing Asset Database
+2019-10-30T08:47:56.935Z - normal: checking language setting...
+2019-10-30T08:47:56.935Z - normal: Language: zh
+2019-10-30T08:47:57.500Z - success: preview server running at http://localhost:7456
+2019-10-30T08:47:57.502Z - success: protocol editor-framework registered
+2019-10-30T08:47:57.502Z - success: protocol app registered
+2019-10-30T08:47:57.502Z - success: protocol theme registered
+2019-10-30T08:47:57.502Z - success: protocol packages registered
+2019-10-30T08:47:57.503Z - success: protocol uuid registerred
+2019-10-30T08:47:57.503Z - success: protocol db registerred
+2019-10-30T08:47:57.503Z - success: protocol thumbnail registerred
+2019-10-30T08:47:57.503Z - success: protocol unpack registerred
+2019-10-30T08:47:57.503Z - success: protocol disable-commonjs registerred
+2019-10-30T08:47:57.583Z - normal: connected!
+2019-10-30T08:47:57.585Z - normal: Check project E:\webpack\cocos\cocos-first-game\path1
+2019-10-30T08:47:57.586Z - normal: Initializing project E:\webpack\cocos\cocos-first-game\path1
+2019-10-30T08:47:57.932Z - normal: Initializing Cocos2d
+2019-10-30T08:47:58.642Z - normal: Initializing engine extends
+2019-10-30T08:47:58.655Z - success: alipay-adapter loaded
+2019-10-30T08:47:58.658Z - success: asset-db-debugger loaded
+2019-10-30T08:47:58.658Z - success: baidu-adapter loaded
+2019-10-30T08:47:58.659Z - success: color-picker loaded
+2019-10-30T08:47:58.766Z - success: fb-audience-network loaded
+2019-10-30T08:47:58.816Z - success: fb-live-stream loaded
+2019-10-30T08:47:58.819Z - success: google-play-instant loaded
+2019-10-30T08:47:58.823Z - success: huawei-runtime loaded
+2019-10-30T08:47:59.015Z - success: cpk-publish loaded
+2019-10-30T08:47:59.015Z - success: jsb-adapter loaded
+2019-10-30T08:47:59.018Z - success: oppo-runtime loaded
+2019-10-30T08:47:59.020Z - success: package-manager loaded
+2019-10-30T08:47:59.114Z - success: qqplay-adapter loaded
+2019-10-30T08:47:59.115Z - success: runtime-dev-tools loaded
+2019-10-30T08:47:59.118Z - success: sdkbox loaded
+2019-10-30T08:47:59.121Z - success: tester loaded
+2019-10-30T08:47:59.122Z - success: ui-kit-preview-extra loaded
+2019-10-30T08:47:59.123Z - success: ui-kit-preview loaded
+2019-10-30T08:47:59.124Z - success: ui-kit loaded
+2019-10-30T08:47:59.128Z - success: vivo-runtime loaded
+2019-10-30T08:47:59.129Z - success: weapp-adapter loaded
+2019-10-30T08:47:59.130Z - success: xiaomi-adapter loaded
+2019-10-30T08:47:59.132Z - success: alipay-minigame loaded
+2019-10-30T08:47:59.170Z - success: assets loaded
+2019-10-30T08:47:59.173Z - success: builder loaded
+2019-10-30T08:47:59.388Z - success: cocos-services loaded
+2019-10-30T08:47:59.391Z - success: console loaded
+2019-10-30T08:47:59.425Z - success: fb-instant-games loaded
+2019-10-30T08:47:59.427Z - success: game-window loaded
+2019-10-30T08:47:59.428Z - success: google-instant-games loaded
+2019-10-30T08:47:59.432Z - success: hierarchy loaded
+2019-10-30T08:47:59.434Z - success: inspector loaded
+2019-10-30T08:47:59.435Z - success: keystore loaded
+2019-10-30T08:47:59.437Z - success: node-library loaded
+2019-10-30T08:47:59.438Z - success: package-asset loaded
+2019-10-30T08:47:59.439Z - success: preferences loaded
+2019-10-30T08:47:59.440Z - success: project-exporter loaded
+2019-10-30T08:47:59.442Z - success: project-importer loaded
+2019-10-30T08:47:59.444Z - success: project-settings loaded
+2019-10-30T08:47:59.449Z - success: scene loaded
+2019-10-30T08:47:59.450Z - success: simulator-debugger loaded
+2019-10-30T08:47:59.451Z - success: sprite-editor loaded
+2019-10-30T08:47:59.454Z - success: store loaded
+2019-10-30T08:47:59.457Z - success: timeline loaded
+2019-10-30T08:47:59.460Z - success: xiaomi-runtime loaded
+2019-10-30T08:48:00.909Z - info: Cocos Services load base data!
+2019-10-30T08:48:04.118Z - normal: Loading packages
+2019-10-30T08:48:04.123Z - normal: Watching packages
+2019-10-30T08:48:04.441Z - normal: Run Application
