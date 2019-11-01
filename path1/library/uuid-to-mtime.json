@@ -445,8 +445,8 @@
     "relativePath": "ani\\car0.anim"
   },
   "130d2efb-89c6-4acc-9bbd-b54c9e0b46de": {
-    "asset": 1572576460180,
-    "meta": 1572576460203,
+    "asset": 1572587021194,
+    "meta": 1572587021231,
     "relativePath": "test.fire"
   },
   "94b9d887-9ab1-4d60-a7af-71c73b4b3bdf": {
@@ -484,24 +484,24 @@
     "meta": 1571563327627,
     "relativePath": "prefab\\carCollider.prefab"
   },
-  "d1345380-4cf5-41ca-aee3-1278be971402": {
-    "asset": 1572576455613,
-    "meta": 1572576457016,
-    "relativePath": "script\\car.ts"
-  },
   "fcd8130e-f79a-4b70-bb91-3359e579eaf8": {
     "asset": 1572576438449,
     "meta": 1572576457025,
     "relativePath": "script\\lights.ts"
   },
-  "691689c8-21e1-42fe-9a31-b6e6016bce58": {
-    "asset": 1572576448559,
-    "meta": 1572576457057,
-    "relativePath": "script\\main.ts"
-  },
   "bd1b39a2-ceac-4086-8e26-720c42870f27": {
     "asset": 1572576450790,
     "meta": 1572576457058,
     "relativePath": "script\\switchLamp.ts"
+  },
+  "691689c8-21e1-42fe-9a31-b6e6016bce58": {
+    "asset": 1572586400281,
+    "meta": 1572586402436,
+    "relativePath": "script\\main.ts"
+  },
+  "d1345380-4cf5-41ca-aee3-1278be971402": {
+    "asset": 1572587287034,
+    "meta": 1572587288421,
+    "relativePath": "script\\car.ts"
   }
 }

@@ -17,7 +17,7 @@ var NewClass = /** @class */ (function (_super) {
         var _this = this;
         setInterval(function () {
             _this.initCar();
-        }, 1500);
+        }, 2000);
     };
     NewClass.prototype.initCar = function () {
         var newStar = cc.instantiate(this.car);

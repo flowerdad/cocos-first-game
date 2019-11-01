@@ -53,6 +53,10 @@ var NewClass = /** @class */ (function (_super) {
             var manager = cc.director.getCollisionManager();
             manager.enabled = true;
             // manager.enabledDebugDraw = true;
+            if (this.othersPrite != null) {
+                var ani = this.othersPrite.getComponent(cc.Animation);
+                // console.log(ani.getAnimationState())
+            }
         }
     };
     NewClass.prototype.removeNode = function () {
@@ -66,9 +70,11 @@ var NewClass = /** @class */ (function (_super) {
         // console.log(self)
         // console.log(other.getComponent('lights'))
         if (other.getComponent('lights') == null) {
+            this.selfNode.pause();
+            console.log(this.selfNode.node.getAnimationState());
+            this.othersPrite = other;
         }
         else {
-            this.othersPrite = other;
             var type = other.node.getComponent('lights').type;
             console.log(type);
             if (type == 0) {

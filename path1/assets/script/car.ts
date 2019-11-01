@@ -62,6 +62,10 @@ export default class NewClass extends cc.Component {
             var manager = cc.director.getCollisionManager();
             manager.enabled = true;
             // manager.enabledDebugDraw = true;
+            if(this.othersPrite!=null){
+                var ani=this.othersPrite.getComponent(cc.Animation)
+                // console.log(ani.getAnimationState())
+            }
         }
     }
 
@@ -83,8 +87,10 @@ export default class NewClass extends cc.Component {
 
 
         if (other.getComponent('lights') == null) {
-        } else {
+            this.selfNode.pause();
+            console.log(this.selfNode.getAnimationState())
             this.othersPrite = other;
+        } else {
             var type = other.node.getComponent('lights').type
             console.log(type);
             if (type == 0) {
