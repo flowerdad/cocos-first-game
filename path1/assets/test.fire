@@ -536,6 +536,7 @@
     "positionType": 0,
     "type": 0,
     "spriteType": 1,
+    "othersPrite": null,
     "_id": "86d0jaKOtKqoWYzMNC+lpG"
   },
   {
@@ -666,6 +667,7 @@
     "positionType": 2,
     "type": 0,
     "spriteType": 1,
+    "othersPrite": null,
     "_id": "deq9293oNGtZvN6QfWxKFG"
   },
   {
@@ -796,6 +798,7 @@
     "positionType": 3,
     "type": 1,
     "spriteType": 1,
+    "othersPrite": null,
     "_id": "9dkiTGlvVPBbWNnj52OkF+"
   },
   {
@@ -926,6 +929,7 @@
     "positionType": 1,
     "type": 1,
     "spriteType": 1,
+    "othersPrite": null,
     "_id": "b6cBDo+qBOgrJfQDHbdb4z"
   },
   {

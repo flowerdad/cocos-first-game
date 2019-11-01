@@ -23,6 +23,10 @@ export default class NewClass extends cc.Component {
     @property
     othersPrite = null
 
+    // main
+    @property
+    main = null
+
     random(lower, upper) {
         return Math.floor(Math.random() * (upper - lower + 1)) + lower;
     }
@@ -30,6 +34,7 @@ export default class NewClass extends cc.Component {
     onLoad() {
         this.spriteNode = this.getComponent(cc.Sprite)
         this.selfNode = this.getComponent(cc.Animation)
+        this.main=cc.find("Canvas").getComponent("main");
         var random = this.random(0, 3);
         console.log(random);
         // if (random == 2) { random = 1 }
@@ -57,20 +62,16 @@ export default class NewClass extends cc.Component {
             var manager = cc.director.getCollisionManager();
             manager.enabled = true;
             // manager.enabledDebugDraw = true;
-
-            if (this.othersPrite != null) {
-                if (this.othersPrite.getComponent('lights').type == 1) {
-                    this.selfNode.resume();
-                }
-            }
-
         }
     }
 
     removeNode() {
         console.log('动画完事')
-        this.spriteNode.destroy();
+        this.node.destroy();
     }
+
+
+
 
     onCollisionEnter(other, self) {
 
@@ -82,11 +83,10 @@ export default class NewClass extends cc.Component {
 
 
         if (other.getComponent('lights') == null) {
-            console.log('我是车')
         } else {
-            console.log('我是灯')
             this.othersPrite = other;
-            var type = other.getComponent('lights').type
+            var type = other.node.getComponent('lights').type
+            console.log(type);
             if (type == 0) {
                 this.selfNode.pause();
             } else {
