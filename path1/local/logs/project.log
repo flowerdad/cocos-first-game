@@ -66,3 +66,13 @@
 2019-10-30T08:48:04.118Z - normal: Loading packages
 2019-10-30T08:48:04.123Z - normal: Watching packages
 2019-10-30T08:48:04.441Z - normal: Run Application
+2019-10-30T09:07:21.483Z - error: The 'default' value of 'switchLamp.button' can not be an constructor. Set default to null please.
+    at Object.cc.errorID (E:\app\cocos\CocosCreator\resources\engine\bin\.cache\dev\cocos2d\core\CCDebug.js:167:16)
+    at Object.exports.preprocessAttrs (E:\app\cocos\CocosCreator\resources\engine\bin\.cache\dev\cocos2d\core\platform\preprocess-class.js:210:36)
+    at declareProperties (E:\app\cocos\CocosCreator\resources\engine\bin\.cache\dev\cocos2d\core\platform\CCClass.js:631:28)
+    at Object.CCClass [as Class] (E:\app\cocos\CocosCreator\resources\engine\bin\.cache\dev\cocos2d\core\platform\CCClass.js:674:17)
+    at E:\app\cocos\CocosCreator\resources\engine\bin\.cache\dev\cocos2d\core\platform\CCClassDecorator.js:183:26
+    at E:\app\cocos\CocosCreator\resources\engine\bin\.cache\dev\cocos2d\core\platform\CCClassDecorator.js:34:28
+    at window.__decorate (E:\app\cocos\CocosCreator\resources\engine\bin\.cache\dev\polyfill\typescript.js:65:38)
+    at E:\webpack\cocos\cocos-first-game\path1\temp\quick-scripts\assets\script\switchLamp.js:27:16
+    at __define (E:\webpack\cocos\cocos-first-game\path1\temp\quick-scripts\assets\script\switchLamp.js:31:2)
