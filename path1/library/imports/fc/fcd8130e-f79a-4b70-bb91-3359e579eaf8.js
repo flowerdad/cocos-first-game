@@ -21,9 +21,10 @@ var NewClass = /** @class */ (function (_super) {
     };
     NewClass.prototype.update = function (dt) {
         if (this.othersPrite != null) {
+            var ani = this.othersPrite.getComponent(cc.Animation);
             if (this.type == 1) {
-                var ani = this.othersPrite.getComponent(cc.Animation);
                 ani.resume();
+                this.othersPrite = null;
             }
         }
     };

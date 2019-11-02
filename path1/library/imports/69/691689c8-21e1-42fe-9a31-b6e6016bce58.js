@@ -14,10 +14,11 @@ var NewClass = /** @class */ (function (_super) {
     // LIFE-CYCLE CALLBACKS:
     // onLoad () {}
     NewClass.prototype.start = function () {
-        var _this = this;
         setInterval(function () {
-            _this.initCar();
         }, 2000);
+        this.schedule(function () {
+            this.initCar();
+        }, 3);
     };
     NewClass.prototype.initCar = function () {
         var newStar = cc.instantiate(this.car);

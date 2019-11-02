@@ -27,6 +27,9 @@ export default class NewClass extends cc.Component {
     @property
     main = null
 
+    @property
+    count = 0
+
     random(lower, upper) {
         return Math.floor(Math.random() * (upper - lower + 1)) + lower;
     }
@@ -36,9 +39,10 @@ export default class NewClass extends cc.Component {
         this.selfNode = this.getComponent(cc.Animation)
         this.main=cc.find("Canvas").getComponent("main");
         var random = this.random(0, 3);
-        console.log(random);
-        // if (random == 2) { random = 1 }
-        this.selfNode.play('car' + random)
+        // console.log(random);
+        if (random == 2) { random = 0 }
+        // this.selfNode.play('car' + random)
+        this.selfNode.play('car0')
         this.selfNode.on('finished', this.removeNode, this);
     }
 
@@ -48,8 +52,8 @@ export default class NewClass extends cc.Component {
     }
 
     update(dt) {
-        //计算出当前位置相对于X的偏移
         if (this.target.x != this.node.x) {
+            //汽车转弯逻辑
             var dx = this.target.x - this.node.x;
             var dy = this.target.y - this.node.y;
             var dir = cc.v2(dx, dy);
@@ -59,38 +63,62 @@ export default class NewClass extends cc.Component {
             this.target.x = this.node.x;
             this.target.y = this.node.y;
 
+            // 动画状态
             var manager = cc.director.getCollisionManager();
             manager.enabled = true;
-            // manager.enabledDebugDraw = true;
+            manager.enabledDebugDraw = true;
+
+            // 实时判断碰撞体是否生效
+            // if(this.othersPrite!=null){
+            //     if (this.othersPrite.getComponent('lights') == null) {
+            //         // 当碰撞为车,判断前车状态,若前车停止则激活当前车行驶
+            //         var ani=this.othersPrite.getComponent(cc.Animation)
+            //         ani.on('resume', this.toresume, this);
+            //     } else {
+            //         // 当碰撞为灯
+            //         var type = this.othersPrite.getComponent('lights').type
+            //         if (type == 0) {
+            //             this.selfNode.pause();
+            //         } else {
+            //             this.selfNode.resume();
+            //         }
+            //     }
+            //     this.othersPrite=null;
+            // }
+
             if(this.othersPrite!=null){
                 var ani=this.othersPrite.getComponent(cc.Animation)
-                // console.log(ani.getAnimationState())
+                ani.on('resume', this.toresume, this);
             }
+
+            
         }
     }
 
+    // 判断前车状态,若前车顺利通过红绿灯且自己不碰撞红灯,当前车继续前行
+    toresume(){
+        // this.scheduleOnce(function(){
+        //     this.selfNode.resume();
+        // },1)
+        this.selfNode.resume();
+        this.othersPrite=null;
+    }
+
+    // 动画完事,销毁对象
     removeNode() {
-        console.log('动画完事')
         this.node.destroy();
     }
 
-
-
-
     onCollisionEnter(other, self) {
-
-        // console.log('我被撞到了')
-        // this.selfNode.stop();
-        // console.log(other)
-        // console.log(self)
-        // console.log(other.getComponent('lights'))
-
-
+        this.count++;
+        console.log('**************************************'+this.count)
         if (other.getComponent('lights') == null) {
+            // 当碰撞到车,停止
             this.selfNode.pause();
-            console.log(this.selfNode.getAnimationState())
+            // 将碰撞到的对象记录给othersPrite
             this.othersPrite = other;
         } else {
+            // 当碰撞到灯,判断是红绿灯
             var type = other.node.getComponent('lights').type
             console.log(type);
             if (type == 0) {
@@ -99,25 +127,6 @@ export default class NewClass extends cc.Component {
                 this.selfNode.resume();
             }
         }
-
-        // // 碰撞系统会计算出碰撞组件在世界坐标系下的相关的值，并放到 world 这个属性里面
-        // var world = self.world;
-        // console.log(world)
-        // // 碰撞组件的 aabb 碰撞框
-        // var aabb = world.aabb;
-        // console.log(aabb)
-
-        // // 节点碰撞前上一帧 aabb 碰撞框的位置
-        // var preAabb = world.preAabb;
-
-        // // 碰撞框的世界矩阵
-        // var t = world.transform;
-
-        // // 以下属性为圆形碰撞组件特有属性
-        // var r = world.radius;
-        // var p = world.position;
-
-        // // 以下属性为 矩形 和 多边形 碰撞组件特有属性
-        // var ps = world.points;
+        
     }
 }

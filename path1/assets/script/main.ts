@@ -12,8 +12,11 @@ export default class NewClass extends cc.Component {
 
     start() {
         setInterval(() => {
-            this.initCar();
+            
         }, 2000);
+        this.schedule(function(){
+            this.initCar();
+        },3);
     }
 
     initCar() {

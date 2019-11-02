@@ -26,9 +26,10 @@ export default class NewClass extends cc.Component {
 
     update (dt) {
         if(this.othersPrite!=null){
+            var ani=this.othersPrite.getComponent(cc.Animation)
             if(this.type==1){
-                var ani=this.othersPrite.getComponent(cc.Animation)
                 ani.resume()
+                this.othersPrite=null;
             }
         }
     }
